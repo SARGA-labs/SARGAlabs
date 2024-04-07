@@ -1,0 +1,238 @@
+{
+  "name": "sarga-labs",
+  "version": "0.0.1",
+  "description": "COULD. /+ MUST./+ WILL.\/^*",
+  "repository": "https://github.com/SARGA-labs/SARGAlabs",
+  "author": "SARGA(labs)",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "build:analyze": "cross-env ANALYZE=true yarn build",
+    "postbuild": "next-sitemap",
+    "start": "next start",
+    "lint": "next lint && stylelint '**/*.{css,scss}'",
+    "tsc": "tsc --pretty --noEmit"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.28.14",
+    "clsx": "^2.1.0",
+    "eslint-config-next": "^14.1.4",
+    "hls.js": "^1.5.7",
+    "just-debounce-it": "^3.2.0",
+    "mousetrap": "1.6.5",
+    "next": "^14.1.4",
+    "react": "^18.2.0",
+    "react-device-detect": "^2.2.3",
+    "react-dom": "^18.2.0",
+    "react-merge-refs": "^2.1.1",
+    "zod": "^3.22.4",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^14.1.4",
+    "@next/eslint-plugin-next": "^14.1.4",
+    "@total-typescript/ts-reset": "^0.5.1",
+    "@types/css-font-loading-module": "^0.0.13",
+    "@types/mousetrap": "^1.6.15",
+    "@types/node": "^20.12.4",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
+    "babel-plugin-optimize-clsx": "^2.6.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
+    "next-sitemap": "^4.2.3",
+    "prettier": "^3.2.5",
+    "sass": "^1.74.1",
+    "stylelint": "^16.3.1",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-prettier": "^5.0.0",
+    "typescript": "^5.4.3"
+  },
+  "engines": {
+    "node": "18.x",
+    "yarn": "1.x"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "arrowParens": "always",
+    "tabWidth": 2,
+    "printWidth": 80,
+    "trailingComma": "none",
+    "endOfLine": "auto"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "react",
+      "react-hooks",
+      "simple-import-sort",
+      "@typescript-eslint"
+    ],
+    "ignorePatterns": [],
+    "extends": [
+      "eslint:recommended",
+      "plugin:import/recommended",
+      "plugin:import/typescript",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier",
+      "plugin:prettier/recommended",
+      "plugin:@next/next/recommended"
+    ],
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true
+    },
+    "rules": {
+      "react/react-in-jsx-scope": 0,
+      "react/display-name": 0,
+      "react/prop-types": 0,
+      "@typescript-eslint/explicit-function-return-type": 0,
+      "@typescript-eslint/explicit-member-accessibility": 0,
+      "@typescript-eslint/indent": 0,
+      "@typescript-eslint/member-delimiter-style": 0,
+      "@typescript-eslint/no-explicit-any": 0,
+      "@typescript-eslint/no-var-requires": 0,
+      "@typescript-eslint/no-use-before-define": 0,
+      "@typescript-eslint/ban-ts-comment": 0,
+      "simple-import-sort/imports": "warn",
+      "simple-import-sort/exports": "warn",
+      "react-hooks/exhaustive-deps": [
+        "warn",
+        {
+          "additionalHooks": "(useIsomorphicLayoutEffect)"
+        }
+      ],
+      "react/no-unescaped-entities": 0,
+      "curly": [
+        "error",
+        "multi-line"
+      ],
+      "react/jsx-no-target-blank": [
+        2,
+        {
+          "allowReferrer": true
+        }
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        2,
+        {
+          "argsIgnorePattern": "^_"
+        }
+      ],
+      "no-console": [
+        1,
+        {
+          "allow": [
+            "warn",
+            "error"
+          ]
+        }
+      ],
+      "prettier/prettier": [
+        "warn",
+        {
+          "endOfLine": "auto"
+        }
+      ],
+      "@typescript-eslint/explicit-module-boundary-types": "off"
+    },
+    "settings": {
+      "import/parsers": {
+        "@typescript-eslint/parser": [
+          ".ts",
+          ".tsx"
+        ]
+      },
+      "import/resolver": {
+        "typescript": {
+          "alwaysTryTypes": true,
+          "project": "."
+        }
+      },
+      "react": {
+        "version": "detect"
+      }
+    }
+  },
+  "stylelint": {
+    "ignoreFiles": [
+      "**/*.{ts,tsx,js,jsx}"
+    ],
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-standard-scss",
+      "stylelint-prettier/recommended"
+    ],
+    "rules": {
+      "scss/at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "tailwind",
+            "layer",
+            "apply",
+            "variants",
+            "responsive",
+            "screen",
+            "include",
+            "for",
+            "mixin",
+            "if",
+            "else",
+            "warn",
+            "return",
+            "function",
+            "use",
+            "each"
+          ]
+        }
+      ],
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": [
+            "global"
+          ]
+        }
+      ],
+      "property-no-unknown": [
+        true,
+        {
+          "ignoreProperties": [
+            "font-named-instance"
+          ]
+        }
+      ],
+      "no-descending-specificity": null,
+      "length-zero-no-unit": null,
+      "alpha-value-notation": null,
+      "selector-id-pattern": null,
+      "selector-class-pattern": null,
+      "property-no-vendor-prefix": null,
+      "value-no-vendor-prefix": null,
+      "scss/no-global-function-names": null,
+      "scss/double-slash-comment-empty-line-before": null
+    }
+  }
+}
