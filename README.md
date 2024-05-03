@@ -1,36 +1,43 @@
-# `your-project`
+# `SARGA LABS`
 
-Repository for `your-project`'s website.
+SARGA(labs), a one-person creative studio by Diyuksh, works across
+visual arts, web development, and design. Diyuksh has been crafting
+unique experiences in various mediums for the past 7 years. Through
+SARGA(labs), Diyuk sh collaborates with thought-provoking artists and
+brands to develop distinct identities and build connections through
+impactful storytelling for the creation of cohesive and integrated brand
+experiences. Each project is approached as a collaborative journey,
+where identity design, art direction, and custom web development work
+together seamlessly. SARGA(labs) works closely with partners to support
+every stage of their growth. Diyuksh is drawn to concepts that feel both
+original and relatable, purposeful and intelligent. Inspiration comes
+from subtle details and intentional minimalism, with a focus on creating
+a tangible experience. SARGA(labs) seeks to transcend mere usability.
 
-## Featured Aspects of the Stack
+## Stack
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Next.js](https://nextjs.org/)
+- [Vercel](https://vercel.com)
 
 ## Get Started
 
-1. Install yarn:
+1. Install bun:
 
-   ```
-   npm install -g yarn
+   ```bash
+   npm install -g bun
    ```
 
 2. Install the dependencies with:
 
-   ```
-   yarn
+   ```bash
+   bun i
    ```
 
 3. Start developing and watch for code changes:
 
+   ```bash
+   bun dev
    ```
-   yarn dev
-   ```
-
-## Things to Note
-
-- Make sure you read `.env.example` to see which environment variables you need to run the project.
 
 ---
-
-If you find you need to make extra config to make this work more seamlessly, feel free to submit a PR suggesting your changes. The goal is to get you up and running with the least steps and burden as possible.
