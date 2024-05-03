@@ -1,14 +1,14 @@
 @import '~/css/helpers';
 
-$columns: 12;
+$columns: 5;
 $columns-mobile: 4;
 $gap: (
-  mobile: 16px,
-  desktop: 24px
+  mobile: 20pt,
+  desktop: 20pt
 );
 $margin: (
-  mobile: 16px,
-  desktop: 24px
+  mobile: 50pt,
+  desktop: 50pt
 );
 $fixed-width: 1280px;
 

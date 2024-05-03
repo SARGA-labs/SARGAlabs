@@ -1,0 +1,22 @@
+.footer {
+  display: grid;
+  grid-template-columns: var(--grid);
+  gap: var(--space);
+  position: fixed;
+  bottom: var(--space);
+  width: calc(100% - var(--space-max) * 2);
+
+  @media screen and (width <= 1240px) {
+    position: static;
+    margin-block-start: var(--space);
+    width: 100%;
+  }
+
+  & p:nth-child(1) {
+    grid-column: span 2;
+  }
+
+  & p:nth-child(2) {
+    grid-column: span 3;
+  }
+}

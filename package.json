@@ -1,7 +1,7 @@
 {
   "name": "sarga-labs",
   "version": "0.0.1",
-  "description": "COULD. /+ MUST./+ WILL.\/^*",
+  "description": "COULD. /+ MUST./+ WILL./^*",
   "repository": "https://github.com/SARGA-labs/SARGAlabs",
   "author": "SARGA(labs)",
   "private": true,
@@ -12,16 +12,20 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint && stylelint '**/*.{css,scss}'",
-    "tsc": "tsc --pretty --noEmit"
+    "tsc": "tsc --pretty --noEmit",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@prismicio/client": "^7.4.1",
+    "@prismicio/next": "^1.5.0",
+    "@prismicio/react": "^2.7.4",
     "@tanstack/react-query": "^5.28.14",
     "clsx": "^2.1.0",
     "eslint-config-next": "^14.1.4",
     "hls.js": "^1.5.7",
     "just-debounce-it": "^3.2.0",
     "mousetrap": "1.6.5",
-    "next": "^14.1.4",
+    "next": "14.2.2",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
@@ -32,6 +36,7 @@
   "devDependencies": {
     "@next/bundle-analyzer": "^14.1.4",
     "@next/eslint-plugin-next": "^14.1.4",
+    "@slicemachine/adapter-next": "^0.3.38",
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/css-font-loading-module": "^0.0.13",
     "@types/mousetrap": "^1.6.15",
@@ -54,6 +59,7 @@
     "next-sitemap": "^4.2.3",
     "prettier": "^3.2.5",
     "sass": "^1.74.1",
+    "slice-machine-ui": "^1.26.0",
     "stylelint": "^16.3.1",
     "stylelint-config-standard": "^36.0.0",
     "stylelint-config-standard-scss": "^13.1.0",

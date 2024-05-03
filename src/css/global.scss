@@ -3,18 +3,24 @@
 @use 'sass:math';
 @import './helpers';
 @import './reset.css';
+@import './pages';
 
 :root {
   // Typography
-  --font-system: -apple-system, blinkmacsystemfont, segoe ui, roboto, oxygen,
-    ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;
+  --font-system: 'Unica 77 Trial', -apple-system, blinkmacsystemfont, segoe ui,
+    roboto, oxygen, ubuntu, cantarell, fira sans, droid sans, helvetica neue,
+    sans-serif;
 
   // Colors
   --inspect-color: #f00;
+  --color-primary: #d0d0d0;
+  --color-secondary: #acacac;
+  --color-base: #989898;
+  --color-s: #00f;
+  --color-d: #f00;
+  --color-dnd: #0f0;
   --color-black: #000;
   --color-white: #fff;
-  --color-gray: #0f0f0f;
-  --color-gray-lighter: #262626;
 
   // Duration
   --duration-slow: #{$duration * 1.5}s;
@@ -24,6 +30,14 @@
   // Transitions
   --transition-quick: var(--duration-fast) cubic-bezier(0.25, 1, 0.5, 1);
   --transition-slow: var(--duration) cubic-bezier(0.25, 1, 0.5, 1);
+
+  // Grid
+  --grid: repeat(5, minmax(0, 1fr));
+
+  // Space
+  --space-max: 50pt;
+  --space: 20pt;
+  --space-sm: 10pt;
 }
 
 html {
@@ -35,13 +49,22 @@ html {
   -moz-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color-scheme: dark;
-  background-color: var(--color-black);
+  background-color: var(--color-base);
+  color: var(--color-primary);
+  // Font Size
+  font-size: 10pt;
+  text-transform: uppercase;
 }
 
 body {
-  background-color: var(--color-black);
-  font-family: var(--font-body);
+  background-color: var(--color-base);
+  font-family: var(--font-system);
   transition: opacity var(--transition-quick);
+  padding: var(--space) var(--space-max);
+
+  @media screen and (width <= 1240px) {
+    padding: var(--space-sm) var(--space);
+  }
 }
 
 body.inspect * {
@@ -67,4 +90,17 @@ html.no-scroll {
 .hidden {
   opacity: 0;
   visibility: hidden;
+}
+
+main {
+  margin-block-start: var(--space);
+}
+
+button,
+.button {
+  padding-inline: var(--space-sm);
+  padding-block: calc(var(--space-sm) / 2);
+  text-align: center;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }

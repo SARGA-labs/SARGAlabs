@@ -1,0 +1,78 @@
+/* Home Page */
+.HOME-PAGE {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20pt;
+
+  @media screen and (width <= 1240px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+/* Studio Page */
+.STUDIO-PAGE {
+  display: grid;
+  grid-template-columns: var(--grid);
+  gap: 20pt;
+
+  @media screen and (width <= 1240px) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .image {
+    grid-column: span 2;
+  }
+
+  .solutions {
+    ul {
+      margin-inline-start: var(--space);
+
+      & > li {
+        margin-block-end: var(--space);
+
+        ol {
+          margin-inline-start: var(--space);
+        }
+      }
+    }
+  }
+
+  .socials {
+    ul:not(:last-child) {
+      margin-block-end: var(--space);
+
+      li {
+        color: var(--color-secondary);
+        transition: color var(--transition-quick);
+
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
+    }
+  }
+}
+
+/* DnD Page */
+.DND-PAGE {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-sm);
+
+  @media screen and (width <= 1240px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  & > * {
+    height: auto;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  p {
+    position: relative;
+  }
+}

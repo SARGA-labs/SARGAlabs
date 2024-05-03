@@ -1,9 +1,12 @@
 import '~/css/global.scss'
 
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 
 import { isDev, siteURL } from '~/lib/constants'
+
+const Footer = dynamic(() => import('~/components/common/Footer'), {
+  ssr: false
+})
 
 const GridDebugger = dynamic(() => import('~/lib/debug/grid-debugger'), {
   ssr: false
@@ -11,10 +14,11 @@ const GridDebugger = dynamic(() => import('~/lib/debug/grid-debugger'), {
 
 import dynamic from 'next/dynamic'
 
+import Header from '~/components/common/Header'
+import PasswordWrapper from '~/components/common/Password/PasswordWrapper'
+
 import { AppHooks } from './app-hooks'
 import { Providers } from './providers'
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-body' })
 
 export const metadata: Metadata = {
   title: {
@@ -41,11 +45,15 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className={inter.variable}>
+      <body>
         <Providers>
-          {children}
-          {isDev && <GridDebugger />}
-          <AppHooks />
+          <PasswordWrapper>
+            <Header />
+            <main>{children}</main>
+            {isDev && <GridDebugger />}
+            <Footer />
+            <AppHooks />
+          </PasswordWrapper>
         </Providers>
       </body>
     </html>

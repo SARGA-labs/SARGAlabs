@@ -21,7 +21,7 @@ const GridDebugger = ({ fixed = false }: GridDebuggerProps) => {
     const updateColumns = () => {
       if (ref.current) {
         const columnsCount =
-          getComputedStyle(ref.current).getPropertyValue('--columns') || '12'
+          getComputedStyle(ref.current).getPropertyValue('--columns') || '10'
         setColumns(parseInt(columnsCount, 10))
       }
     }
