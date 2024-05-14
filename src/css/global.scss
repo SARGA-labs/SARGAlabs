@@ -7,9 +7,8 @@
 
 :root {
   // Typography
-  --font-system: 'Unica 77 Trial', -apple-system, blinkmacsystemfont, segoe ui,
-    roboto, oxygen, ubuntu, cantarell, fira sans, droid sans, helvetica neue,
-    sans-serif;
+  --font-system: -apple-system, blinkmacsystemfont, segoe ui, roboto, oxygen,
+    ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;
 
   // Colors
   --inspect-color: #f00;
@@ -58,7 +57,7 @@ html {
 
 body {
   background-color: var(--color-base);
-  font-family: var(--font-system);
+  font-family: var(--font-body), var(--font-system);
   transition: opacity var(--transition-quick);
   padding: var(--space) var(--space-max);
 

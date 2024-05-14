@@ -1,9 +1,9 @@
 import '~/css/global.scss'
 
 import type { Metadata } from 'next'
+import localFont from 'next/font/local'
 
 import { isDev, siteURL } from '~/lib/constants'
-
 const Footer = dynamic(() => import('~/components/common/Footer'), {
   ssr: false
 })
@@ -21,12 +21,12 @@ import { AppHooks } from './app-hooks'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
-  title: {
-    default: 'next-typescript | basement.studio',
-    template: '%s | basement.studio'
-  },
   metadataBase: siteURL,
-  description: `A minimalist's boilerplate — Next.js with TypeScript.`,
+  title: {
+    default: 'SARGA(labs)© LLC.',
+    template: '%s | SARGA(labs)© LLC.'
+  },
+  description: `SARGA(labs)© LLC. is a solo-run Studio. COULD. /+ MUST./+ WILL./^*`,
   icons: [
     {
       rel: 'apple-touch-icon',
@@ -36,16 +36,81 @@ export const metadata: Metadata = {
   manifest: '/manifest.webmanifest',
   twitter: {
     card: 'summary_large_image',
-    title: 'next-typescript | basement.studio',
-    creator: '@basementstudio',
-    siteId: '@basementstudio'
-  }
+    title: 'SARGA(labs)© LLC.',
+    creator: '@sargalabs',
+    siteId: '@sargalabs',
+    description:
+      'SARGA(labs)© LLC. is a solo-run Studio. COULD. /+ MUST./+ WILL./^*',
+    images: [
+      {
+        url: `/opengraph-image.png`
+      }
+    ]
+  },
+  authors: [
+    {
+      name: 'SARGA(labs)© LLC.',
+      url: 'https://sargalabs.co'
+    }
+  ],
+  keywords: [
+    'artists',
+    'artist',
+    'creative',
+    'outdated',
+    'creative director',
+    'shopify',
+    'shopify partner',
+    'shopify developer',
+    'developer',
+    'web developer',
+    'website developer',
+    'web designer',
+    'website designer',
+    'ui/ux',
+    'diyuksh',
+    'DIYUKSH',
+    'headless website developer',
+    'sarga labs',
+    'sargalabs'
+  ],
+  creator: 'SARGA(labs)© LLC.',
+  publisher: 'SARGA(labs)© LLC.',
+  openGraph: {
+    description:
+      'SARGA(labs)© LLC. is a solo-run Studio. COULD. /+ MUST./+ WILL./^*'
+  },
+  abstract:
+    'SARGA(labs)© LLC. is a solo-run Studio. COULD. /+ MUST./+ WILL./^*',
+  verification: {
+    other: {
+      'p:domain_verify': '31e48b9066900bdde9609249258f5322'
+    }
+  },
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#989898' },
+    { media: '(prefers-color-scheme: light)', color: '#989898' }
+  ]
 }
+const unica77 = localFont({
+  variable: '--font-body',
+  preload: true,
+  src: [
+    {
+      path: '../../public/font/Unica77-LL.woff',
+      style: 'normal'
+    },
+    {
+      path: '../../public/font/Unica77-LL.woff2',
+      style: 'normal'
+    }
+  ]
+})
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body>
+      <body className={unica77.variable}>
         <Providers>
           <PasswordWrapper>
             <Header />

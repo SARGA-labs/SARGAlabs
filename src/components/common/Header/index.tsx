@@ -13,7 +13,7 @@ export default function Header() {
       <ul className={h['links']}>
         <li>
           <Link href={'/'} activeClassName={h.active}>
-            WORK(3)
+            WORK(7)
           </Link>
         </li>
         <li>
