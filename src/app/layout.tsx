@@ -1,6 +1,6 @@
 import '~/css/global.scss'
 
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 
 import { isDev, siteURL } from '~/lib/constants'
@@ -86,12 +86,13 @@ export const metadata: Metadata = {
     other: {
       'p:domain_verify': '31e48b9066900bdde9609249258f5322'
     }
-  },
-  themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#989898' },
-    { media: '(prefers-color-scheme: light)', color: '#989898' }
-  ]
+  }
 }
+
+export const viewport: Viewport = {
+  themeColor: '#989898'
+}
+
 const unica77 = localFont({
   variable: '--font-body',
   preload: true,
