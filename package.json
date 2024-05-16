@@ -30,6 +30,7 @@
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-merge-refs": "^2.1.1",
+    "sharp": "^0.33.3",
     "zod": "^3.22.4",
     "zustand": "^4.5.2"
   },

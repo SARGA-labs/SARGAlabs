@@ -15,7 +15,6 @@ const GridDebugger = dynamic(() => import('~/lib/debug/grid-debugger'), {
 import dynamic from 'next/dynamic'
 
 import Header from '~/components/common/Header'
-import PasswordWrapper from '~/components/common/Password/PasswordWrapper'
 
 import { AppHooks } from './app-hooks'
 import { Providers } from './providers'
@@ -113,13 +112,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body className={unica77.variable}>
         <Providers>
-          <PasswordWrapper>
-            <Header />
-            <main>{children}</main>
-            {isDev && <GridDebugger />}
-            <Footer />
-            <AppHooks />
-          </PasswordWrapper>
+          <Header />
+          <main>{children}</main>
+          {isDev && <GridDebugger />}
+          <Footer />
+          <AppHooks />
         </Providers>
       </body>
     </html>
