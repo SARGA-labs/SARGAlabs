@@ -1,5 +1,6 @@
 import '~/css/global.scss'
 
+import { Analytics } from '@vercel/analytics/react'
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 
@@ -117,6 +118,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           {isDev && <GridDebugger />}
           <Footer />
           <AppHooks />
+          <Analytics />
         </Providers>
       </body>
     </html>
