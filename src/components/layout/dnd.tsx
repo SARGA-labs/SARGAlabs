@@ -14,6 +14,11 @@ export default function DNDComponent() {
         IT.
       </p>
       <Image src={image} alt="one" />
+      <p>
+        13th August 2024, Registred SARGA(lifestyle), the progress is unreal.
+        ITS ALL FOR HER.
+      </p>
+      <p>SHE GIVES ME PURPOSE</p>
     </Container>
   )
 }

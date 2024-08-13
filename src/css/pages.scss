@@ -75,14 +75,14 @@
   gap: var(--space-sm);
 
   @media screen and (width <= 1240px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   & > * {
     height: auto;
     width: 100%;
-    text-overflow: ellipsis;
     overflow: hidden;
+    word-wrap: break-word;
   }
 
   p {
