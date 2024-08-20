@@ -19,6 +19,15 @@ export default function DNDComponent() {
         ITS ALL FOR HER.
       </p>
       <p>SHE GIVES ME PURPOSE</p>
+      <p>LOVING IS A GREAT FEELING.</p>
+
+      <p>EVERYTHING I DO IS FOR HER.</p>
+
+      <p>
+        MARTY is getting on the packaging as a barter for some help I'm doing
+        for him. He has great creative direction. HE IS GONNA DO EVERYTHING FOR
+        SARGA(LIFESTYLE)
+      </p>
     </Container>
   )
 }
