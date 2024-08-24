@@ -70,15 +70,17 @@
 
 /* DnD Page */
 .DND-PAGE {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--space-sm);
-
-  @media screen and (width <= 1240px) {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+  .DND-COL {
+    padding-left: 30px; /* gutter size */
+    background-clip: padding-box;
   }
-
-  & > * {
+  & > div * {
+    padding-block: 10pt;
     height: auto;
     width: 100%;
     overflow: hidden;
@@ -87,5 +89,7 @@
 
   p {
     position: relative;
+    height: fit-content;
+    border-bottom: 1px solid var(--color-secondary);
   }
 }

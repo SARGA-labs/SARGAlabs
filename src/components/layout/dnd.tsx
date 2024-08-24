@@ -1,12 +1,24 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
+import Masonry from 'react-masonry-css'
 
 import image from '~/public/dnd/1.png'
 
-import { Container } from '../container'
+const breakpointColumns = {
+  default: 6,
+  1100: 3,
+  700: 2,
+  500: 1
+}
+
 export default function DNDComponent() {
   return (
-    <Container className="DND-PAGE">
+    <Masonry
+      className="DND-PAGE"
+      breakpointCols={breakpointColumns}
+      columnClassName="DND-COL"
+    >
       <p>
         DIYUKSH BY DIYUKSH IS A ARCHIVE OF WORK FROM DIYUKSH UNDER THE BRAND
         NAME DIYUKSH A EXPIREMENT RAN AND MANAGED BY DIYUKSH TO DO THE
@@ -14,20 +26,27 @@ export default function DNDComponent() {
         IT.
       </p>
       <Image src={image} alt="one" />
+      <p>3rd August 2024, ASH DAY THE BEST DAY EVER.</p>
+      <p>10th August 2024, SHE GIVES ME PURPOSE</p>
       <p>
         13th August 2024, Registred SARGA(lifestyle), the progress is unreal.
         ITS ALL FOR HER.
       </p>
-      <p>SHE GIVES ME PURPOSE</p>
-      <p>LOVING IS A GREAT FEELING.</p>
-
-      <p>EVERYTHING I DO IS FOR HER.</p>
-
       <p>
-        MARTY is getting on the packaging as a barter for some help I'm doing
-        for him. He has great creative direction. HE IS GONNA DO EVERYTHING FOR
-        SARGA(LIFESTYLE)
+        16th August 2024, SUBCULTURE BLOCK PARTY, I'm glad other peeps didnt
+        pull up the best time I ever spent.
       </p>
-    </Container>
+      <p>21st August 2024, LOVING IS A GREAT FEELING.</p>
+      <p>21st August 2024, EVERYTHING I DO IS FOR HER.</p>
+      <p>
+        22rd August 2024, MARTY is getting on the packaging as a barter for some
+        help I'm doing for him. He has great creative direction. HE IS GONNA DO
+        EVERYTHING FOR SARGA(LIFESTYLE)
+      </p>
+      <p>
+        24th August 2024, She is skeptical about the whole thing and I wanna
+        make her believe in me and trust me.
+      </p>
+    </Masonry>
   )
 }
