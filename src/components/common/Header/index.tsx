@@ -23,7 +23,7 @@ export default function Header() {
         </li>
         <li>
           <Link href={'/DND'} activeClassName={h.active}>
-            DIYUKSH BY DIYUKSH (0001)
+            JOURNAL
           </Link>
         </li>
       </ul>
