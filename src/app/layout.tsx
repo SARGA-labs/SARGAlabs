@@ -21,10 +21,10 @@ import { Providers } from './providers'
 export const metadata: Metadata = {
   metadataBase: siteURL,
   title: {
-    default: 'SARGA(labs)© LLC.',
-    template: '%s | SARGA(labs)© LLC.'
+    default: 'SARGA(labs)©',
+    template: '%s | SARGA(labs)©'
   },
-  description: `SARGA(labs)© LLC. is a solo-run Studio. COULD. /+ MUST./+ WILL./^*`,
+  description: `SARGA(labs)© is a solo-run Studio. COULD. /+ MUST./+ WILL./^*`,
   icons: [
     {
       rel: 'apple-touch-icon',
@@ -34,11 +34,11 @@ export const metadata: Metadata = {
   manifest: '/manifest.webmanifest',
   twitter: {
     card: 'summary_large_image',
-    title: 'SARGA(labs)© LLC.',
+    title: 'SARGA(labs)©',
     creator: '@sargalabs',
     siteId: '@sargalabs',
     description:
-      'SARGA(labs)© LLC. is a solo-run Studio. COULD. /+ MUST./+ WILL./^*',
+      'SARGA(labs)© is a solo-run Studio. COULD. /+ MUST./+ WILL./^*',
     images: [
       {
         url: `/opengraph-image.png`
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   authors: [
     {
-      name: 'SARGA(labs)© LLC.',
-      url: 'https://sargalabs.co'
+      name: 'SARGA(labs)©',
+      url: 'https://sar.ga'
     }
   ],
   keywords: [
@@ -72,14 +72,14 @@ export const metadata: Metadata = {
     'sarga labs',
     'sargalabs'
   ],
-  creator: 'SARGA(labs)© LLC.',
-  publisher: 'SARGA(labs)© LLC.',
+  creator: 'SARGA(labs)©',
+  publisher: 'SARGA(labs)',
   openGraph: {
     description:
-      'SARGA(labs)© LLC. is a solo-run Studio. COULD. /+ MUST./+ WILL./^*'
+      'SARGA(labs)© is a solo-run Studio. COULD. /+ MUST./+ WILL./^*'
   },
   abstract:
-    'SARGA(labs)© LLC. is a solo-run Studio. COULD. /+ MUST./+ WILL./^*',
+    'SARGA(labs)© is a solo-run Studio. COULD. /+ MUST./+ WILL./^*',
   verification: {
     other: {
       'p:domain_verify': '31e48b9066900bdde9609249258f5322'
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#989898'
+  themeColor: '#000'
 }
 
 const unica77 = localFont({
@@ -127,6 +127,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
               viewBox="0 0 457 103"
               fill="var(--color-primary)"
               xmlns="http://www.w3.org/2000/svg"
+              style={{ width: '100%', height: 'auto', maxWidth: '500px'}}
             >
               <g clipPath="url(#clip0_473_40)">
                 <path d="M145.95 11.08C145.19 11.08 144.87 9.89 144.33 8.59C141.74 3.62 137.41 2.97 133.85 2.97C118.29 2.97 104.35 21.77 86.3 45.11C63.07 74.94 35.83 86.28 15.74 83.58C5.56999 82.29 -0.690006 75.59 0.0599937 63.92C0.709994 54.3 4.48999 40.58 21.35 25.23C37.56 10.54 60.04 5.03 69.22 7.84C79.05 10.76 77.76 20.7 75.7 26.21C72.78 34.53 65 46.74 55.17 55.17C43.61 65.11 30.53 71.16 20.16 71.16C16.27 71.16 14.22 69.54 13.57 67.81C13.35 66.84 13.46 66.08 13.89 65.97C14.32 65.86 14.43 67.05 14.97 67.81C15.62 68.67 17.24 69.97 20.05 69.97C30.64 69.97 41.01 61.22 51.39 52.14C59.28 45.22 70.19 33.23 73.43 25.56C75.59 20.37 77.32 11.84 68.57 9.35C59.17 6.65 42.09 15.51 25.78 30.31C11.52 43.17 3.40999 55.38 2.54999 64.57C1.57999 74.4 6.75999 80.89 15.52 81.97C34.43 84.56 54.96 68.25 77.55 41.55C101.21 13.67 117.85 1.67 134.49 1.67C138.38 1.67 144.86 2.32 147.35 7.29C148.11 8.59 147.67 10.86 145.95 11.07V11.08Z" />
