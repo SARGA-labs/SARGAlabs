@@ -16,11 +16,7 @@ import { Providers } from '~/app/providers'
 
 export const metadata: Metadata = {
   metadataBase: siteURL,
-  title: {
-    default: 'SARGA(labs)© LLC.',
-    template: '%s | SARGA(labs)© LLC.'
-  },
-  description: `SARGA(labs)© LLC. is a solo-run Studio. COULD. /+ MUST./+ WILL./^*`,
+  description: `SARGA(labs)© is a solo-run Studio. COULD. /+ MUST./+ WILL./^*`,
   icons: [
     {
       rel: 'apple-touch-icon',
@@ -30,11 +26,11 @@ export const metadata: Metadata = {
   manifest: '/manifest.webmanifest',
   twitter: {
     card: 'summary_large_image',
-    title: 'SARGA(labs)© LLC.',
+    title: 'SARGA(labs)©',
     creator: '@sargalabs',
     siteId: '@sargalabs',
     description:
-      'SARGA(labs)© LLC. is a solo-run Studio. COULD. /+ MUST./+ WILL./^*',
+      'SARGA(labs)© is a solo-run Studio. COULD. /+ MUST./+ WILL./^*',
     images: [
       {
         url: `/opengraph-image.png`
@@ -43,8 +39,8 @@ export const metadata: Metadata = {
   },
   authors: [
     {
-      name: 'SARGA(labs)© LLC.',
-      url: 'https://sargalabs.co'
+      name: 'SARGA(labs)©',
+      url: 'https://sar.ga'
     }
   ],
   keywords: [
@@ -68,14 +64,13 @@ export const metadata: Metadata = {
     'sarga labs',
     'sargalabs'
   ],
-  creator: 'SARGA(labs)© LLC.',
-  publisher: 'SARGA(labs)© LLC.',
+  creator: 'SARGA(labs)©',
+  publisher: 'SARGA(labs)',
   openGraph: {
     description:
-      'SARGA(labs)© LLC. is a solo-run Studio. COULD. /+ MUST./+ WILL./^*'
+      'SARGA(labs)© is a solo-run Studio. COULD. /+ MUST./+ WILL./^*'
   },
-  abstract:
-    'SARGA(labs)© LLC. is a solo-run Studio. COULD. /+ MUST./+ WILL./^*',
+  abstract: 'SARGA(labs)© is a solo-run Studio. COULD. /+ MUST./+ WILL./^*',
   verification: {
     other: {
       'p:domain_verify': '31e48b9066900bdde9609249258f5322'
@@ -84,7 +79,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#989898'
+  themeColor: '#000'
 }
 
 const unica77 = localFont({
