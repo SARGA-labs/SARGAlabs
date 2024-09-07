@@ -4,9 +4,6 @@ import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 
 import { isDev, siteURL } from '~/lib/constants'
-const Footer = dynamic(() => import('~/components/common/Footer'), {
-  ssr: false
-})
 
 const GridDebugger = dynamic(() => import('~/lib/debug/grid-debugger'), {
   ssr: false
@@ -14,10 +11,8 @@ const GridDebugger = dynamic(() => import('~/lib/debug/grid-debugger'), {
 
 import dynamic from 'next/dynamic'
 
-import Header from '~/components/common/Header'
-import { Providers } from '~/app/providers'
 import { AppHooks } from '~/app/app-hooks'
-
+import { Providers } from '~/app/providers'
 
 export const metadata: Metadata = {
   metadataBase: siteURL,
