@@ -4,6 +4,7 @@ import React from 'react'
 import Masonry from 'react-masonry-css'
 
 import image from '~/public/dnd/1.png'
+import image2 from '~/public/dnd/2.jpg'
 
 const breakpointColumns = {
   default: 6,
@@ -47,6 +48,7 @@ export default function DNDComponent() {
         24th August 2024, She is skeptical about the whole thing and I wanna
         make her believe in me and trust me.
       </p>
+      <Image src={image2} alt="two" />
     </Masonry>
   )
 }
