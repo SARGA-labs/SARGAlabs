@@ -27,7 +27,7 @@ export default function DNDComponent() {
         IT.
       </p>
       <Image src={image} alt="one" />
-      <p>3rd August 2024, ASH DAY THE BEST DAY EVER.</p>
+      <p>03rd August 2024, ASH DAY THE BEST DAY EVER.</p>
       <p>10th August 2024, SHE GIVES ME PURPOSE</p>
       <p>
         13th August 2024, Registred SARGA(lifestyle), the progress is unreal.
@@ -48,7 +48,15 @@ export default function DNDComponent() {
         24th August 2024, She is skeptical about the whole thing and I wanna
         make her believe in me and trust me.
       </p>
+      <p>
+        06th September 2024, NEW DOMAIN, www.sar.ga, all the subdomains are
+        gonna look soo good + the emails are gonna look so good.
+      </p>
       <Image src={image2} alt="two" />
+      <p>
+        07th September 2024, ANAVRIN IS LIVEEEEEE, I can't wait for both of them
+        to succeed, I hope I can be along the way of their success with SARGA.
+      </p>
     </Masonry>
   )
 }

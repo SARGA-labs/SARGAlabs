@@ -87,6 +87,11 @@
     word-wrap: break-word;
   }
 
+  img {
+    object-fit: cover;
+    max-height: 200px;
+  }
+
   p {
     position: relative;
     height: fit-content;
