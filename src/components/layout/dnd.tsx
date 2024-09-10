@@ -57,6 +57,14 @@ export default function DNDComponent() {
         07th September 2024, ANAVRIN IS LIVEEEEEE, I can't wait for both of them
         to succeed, I hope I can be along the way of their success with SARGA.
       </p>
+      <p>
+        10th, September 2024, ANAVRIN is going at great speed, also got start
+        working on MAATI with Sohana.
+      </p>
+      <p>
+        10th, September 2024, I wish I could join her on the Concert, but I hope
+        she enjoys a ton, We got COLDPLAY coming tho.
+      </p>
     </Masonry>
   )
 }
