@@ -7,6 +7,7 @@ const DNDPAGE = () => {
   return (
     <>
       <PasswordWrapper>
+        <h1>JOURNAL</h1>
         <DNDComponent />
       </PasswordWrapper>
     </>
