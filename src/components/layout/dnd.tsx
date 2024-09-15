@@ -5,6 +5,7 @@ import Masonry from 'react-masonry-css'
 
 import image from '~/public/dnd/1.png'
 import image2 from '~/public/dnd/2.jpg'
+import image3 from '~/public/dnd/3.jpg'
 
 import { Container } from '../container'
 
@@ -81,6 +82,7 @@ export default function DNDComponent() {
           10th, September 2024, I wish I could join her on the Concert, but I
           hope she enjoys a ton, We got COLDPLAY coming tho.
         </p>
+        <Image src={image3} alt="three" />
       </Masonry>
     </>
   )
