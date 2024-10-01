@@ -28,7 +28,7 @@ export default function DNDComponent() {
         }}
       >
         <h1>JOURNAL</h1>
-        <span>Last Updated: Tue 10 September, 2024 - 21:21</span>
+        <span>Last Updated: Wed 2 October, 2024 - 00:52</span>
       </Container>
 
       <Masonry
@@ -83,7 +83,35 @@ export default function DNDComponent() {
           hope she enjoys a ton, We got COLDPLAY coming tho.
         </p>
         <Image src={image3} alt="three" />
+        <p>
+          14th Sept,Its tough in situations like this listening to stuff like
+          this all I can do is hear her out I just hope we can having flowing
+          conversations again, I can be a man to her, for her to not think just
+          open her mind up to me stay as comfortable as she wants to be. be. ALL
+          LOVE FOR HER.
+        </p>
+        <p>
+          17th Sept, I&apos;m dedicated, I mean it when I say it. I know I
+          couldn&apos;t live up to the things that I have said but one thing
+          that is engraved in me is I&apos;m dedicated. EVERYTHING I DO IS FOR
+          LOVE. I don&apos;t want the love in return lemme just play my part
+          atleast.
+        </p>
+        <p>
+          21th Sept, BRUH NGL LOVE YOURSELF ONLY THEN YOU CAN EXPECT LOVE FROM
+          SOMEONE. I LOVE MYSELF. THANKS ASH.
+        </p>
+        <p>21st Sept, Don&apos;t play to win or lose just play.</p>
+        <p>
+          1st Oct, Probably the worst and the best day of my life, I dont fuck
+          around, learned alot and going into isolation. Winter arc has began.
+          Heard it for the first time “I LIKED YOU” felt nice everything I
+          wanted to hear ever. &lt; 3 ALL LOVE FOR YOU ASH AND TOM AND JERRY; I
+          don&apos;t need anything at all now. Thanks for everything and
+          everyone. Sorry.
+        </p>
       </Masonry>
     </>
   )
 }
+
