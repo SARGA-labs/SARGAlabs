@@ -110,8 +110,11 @@ export default function DNDComponent() {
           don&apos;t need anything at all now. Thanks for everything and
           everyone. Sorry.
         </p>
+        <p>
+          10th Oct, Launch day for Anvarin, I&apos;m glad I&apos;m able to help
+          her out. But a end of our journey.
+        </p>
       </Masonry>
     </>
   )
 }
-
