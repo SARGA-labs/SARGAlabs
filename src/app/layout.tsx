@@ -5,75 +5,83 @@ import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 
 import { Container } from '~/components/container'
-import { siteURL } from '~/lib/constants'
 
 import { AppHooks } from './app-hooks'
 import { Providers } from './providers'
+import { headers } from 'next/headers'
 
-export const metadata: Metadata = {
-  metadataBase: siteURL,
-  title: {
-    default: 'SARGA(labs)©',
-    template: '%s | SARGA(labs)©'
-  },
-  description: `SARGA(labs)© is a solo-run Studio. COULD. /+ MUST./+ WILL./^*`,
-  icons: [
-    {
-      rel: 'apple-touch-icon',
-      url: '/apple-touch-icon.png'
-    }
-  ],
-  manifest: '/manifest.webmanifest',
-  twitter: {
-    card: 'summary_large_image',
-    title: 'SARGA(labs)©',
-    creator: '@sargalabs',
-    siteId: '@sargalabs',
-    description:
-      'SARGA(labs)© is a solo-run Studio. COULD. /+ MUST./+ WILL./^*',
-    images: [
+function getBaseUrlFromHeaders() {
+  const h = headers()
+  const host = h.get('x-forwarded-host') ?? h.get('host') ?? 'sar.ga'
+  const proto = h.get('x-forwarded-proto') ?? 'https'
+  return new URL(`${proto}://${host}`)
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const metadataBase = getBaseUrlFromHeaders()
+  return {
+    metadataBase,
+    title: {
+      default: `SARGA ${metadataBase.hostname.toUpperCase().split('.')[0]}`,
+      template: `SARGA ${metadataBase.hostname.toUpperCase().split('.')[0]} | %s`
+    },
+    description: `A system for making.`,
+    icons: [
       {
-        url: `/opengraph-image.png`
+        rel: 'apple-touch-icon',
+        url: '/apple-touch-icon.png'
       }
-    ]
-  },
-  authors: [
-    {
-      name: 'SARGA(labs)©',
-      url: 'https://sar.ga'
-    }
-  ],
-  keywords: [
-    'artists',
-    'artist',
-    'creative',
-    'outdated',
-    'creative director',
-    'shopify',
-    'shopify partner',
-    'shopify developer',
-    'developer',
-    'web developer',
-    'website developer',
-    'web designer',
-    'website designer',
-    'ui/ux',
-    'diyuksh',
-    'DIYUKSH',
-    'headless website developer',
-    'sarga labs',
-    'sargalabs'
-  ],
-  creator: 'SARGA(labs)©',
-  publisher: 'SARGA(labs)',
-  openGraph: {
-    description:
-      'SARGA(labs)© is a solo-run Studio. COULD. /+ MUST./+ WILL./^*'
-  },
-  abstract: 'SARGA(labs)© is a solo-run Studio. COULD. /+ MUST./+ WILL./^*',
-  verification: {
-    other: {
-      'p:domain_verify': '31e48b9066900bdde9609249258f5322'
+    ],
+    manifest: '/manifest.webmanifest',
+    twitter: {
+      card: 'summary_large_image',
+      title: 'SARGA',
+      creator: '@sargalabs',
+      siteId: '@sargalabs',
+      description: 'A system for making.',
+      images: [
+        {
+          url: `/opengraph-image.png`
+        }
+      ]
+    },
+    authors: [
+      {
+        name: 'SARGA',
+        url: 'https://sar.ga'
+      }
+    ],
+    keywords: [
+      'artists',
+      'artist',
+      'creative',
+      'outdated',
+      'creative director',
+      'shopify',
+      'shopify partner',
+      'shopify developer',
+      'developer',
+      'web developer',
+      'website developer',
+      'web designer',
+      'website designer',
+      'ui/ux',
+      'diyuksh',
+      'DIYUKSH',
+      'headless website developer',
+      'sarga labs',
+      'sargalabs'
+    ],
+    creator: 'SARGA',
+    publisher: 'SARGA',
+    openGraph: {
+      description: 'A system for making.'
+    },
+    abstract: 'A system for making.',
+    verification: {
+      other: {
+        'p:domain_verify': '31e48b9066900bdde9609249258f5322'
+      }
     }
   }
 }
@@ -111,7 +119,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
               alignItems: 'center',
               justifyContent: 'center',
               position: 'fixed',
-              inset: 0
+              inset: 0,
+              pointerEvents: 'none'
             }}
           >
             <h1>SARGA 2026</h1>
