@@ -69,10 +69,6 @@
     "stylelint-prettier": "^5.0.0",
     "typescript": "^5.4.3"
   },
-  "engines": {
-    "node": "18.x",
-    "yarn": "1.x"
-  },
   "browserslist": [
     ">0.2%",
     "not dead",

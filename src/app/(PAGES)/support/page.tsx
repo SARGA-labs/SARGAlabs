@@ -3,7 +3,7 @@ import React from 'react'
 const SUPPORTPAGE = () => {
   return (
     <>
-      <h1>SUPPORT</h1>
+      <h1 style={{ fontSize: '8rem' }}>SUPPORT</h1>
       <p>
         For any queries, please contact us at{' '}
         <a

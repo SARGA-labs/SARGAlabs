@@ -1,6 +1,5 @@
 'use client'
 import Image from 'next/image'
-import React from 'react'
 import Masonry from 'react-masonry-css'
 
 import image from '~/public/dnd/1.png'
@@ -49,4 +48,3 @@ export default function DNDComponent() {
     </>
   )
 }
-
