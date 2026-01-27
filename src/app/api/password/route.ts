@@ -2,7 +2,7 @@
 
 import { cookies } from 'next/headers'
 
-export async function POST(request: Request, _params: { slug: string }) {
+export async function POST(request: Request) {
   if (!process.env.PASSWORD_COOKIE_NAME) {
     throw new Error(
       'PASSWORD_COOKIE_NAME is not defined in environment variables'
@@ -25,12 +25,10 @@ export async function POST(request: Request, _params: { slug: string }) {
     })
   }
 
+  const cookieStore = await cookies()
+  cookieStore.set(process.env.PASSWORD_COOKIE_NAME, 'true')
+
   return new Response('password correct', {
-    status: 200,
-    headers: {
-      'set-Cookie': String(
-        cookies().set(process.env.PASSWORD_COOKIE_NAME, 'true')
-      )
-    }
+    status: 200
   })
 }

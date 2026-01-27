@@ -8,13 +8,6 @@ import image3 from '~/public/dnd/3.jpg'
 
 import { Container } from '../container'
 
-const breakpointColumns = {
-  default: 6,
-  1100: 3,
-  700: 2,
-  500: 1
-}
-
 export default function DNDComponent() {
   return (
     <>

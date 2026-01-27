@@ -1,10 +1,14 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 import { Container } from '~/components/container'
 import { getSizes } from '~/lib/utils'
 import about from '~/public/studio/about.webp'
+
+export const metadata: Metadata = {
+  title: 'STUDIO'
+}
 
 const STUDIOPAGE = () => {
   return (

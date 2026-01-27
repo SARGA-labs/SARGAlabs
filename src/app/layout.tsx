@@ -10,20 +10,21 @@ import { AppHooks } from './app-hooks'
 import { Providers } from './providers'
 import { headers } from 'next/headers'
 
-function getBaseUrlFromHeaders() {
-  const h = headers()
+async function getBaseUrlFromHeaders() {
+  const h = await headers()
   const host = h.get('x-forwarded-host') ?? h.get('host') ?? 'sar.ga'
   const proto = h.get('x-forwarded-proto') ?? 'https'
   return new URL(`${proto}://${host}`)
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const metadataBase = getBaseUrlFromHeaders()
+  const metadataBase = await getBaseUrlFromHeaders()
+
   return {
     metadataBase,
     title: {
-      default: `SARGA ${metadataBase.hostname.toUpperCase().split('.')[0]}`,
-      template: `SARGA ${metadataBase.hostname.toUpperCase().split('.')[0]} | %s`
+      default: 'SARGA',
+      template: 'SARGA %s'
     },
     description: `A system for making.`,
     icons: [

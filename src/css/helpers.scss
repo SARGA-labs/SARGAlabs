@@ -2,8 +2,8 @@
 @use 'sass:math';
 
 $golden-ratio: 1.618;
-$reciprocal-golden-ratio: 1 / $golden-ratio;
-$duration: $reciprocal-golden-ratio * 1.2;
+$reciprocal-golden-ratio: calc(1 / $golden-ratio);
+$duration: calc($reciprocal-golden-ratio * 1.2);
 $breakpoints: (
   'mobile': (
     max-width: 800px

@@ -4,7 +4,14 @@ export const config = {
   matcher: ['/((?!api|_next|favicon.ico|robots.txt|sitemap.xml).*)']
 }
 
-const ALLOWED = new Set(['studio', 'support', 'journal'])
+const ALLOWED = new Set([
+  'studio',
+  'support',
+  'journal',
+  'write',
+  'research',
+  'club'
+])
 
 function getSubdomain(host: string) {
   const hostname = host.split(':')[0]
@@ -14,13 +21,18 @@ function getSubdomain(host: string) {
     return hostname!.replace('.sar.local', '')
   }
 
+  // dev: studio.localhost
+  if (hostname!.endsWith('.localhost')) {
+    return hostname!.replace('.localhost', '')
+  }
+
   // prod: studio.sar.ga
   const parts = hostname!.split('.')
   if (parts.length >= 3) return parts[0]
   return ''
 }
 
-export default function middleware(req: NextRequest) {
+export default function proxy(req: NextRequest) {
   const host = req.headers.get('host') || ''
   const url = req.nextUrl.clone()
 

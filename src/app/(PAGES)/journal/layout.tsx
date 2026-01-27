@@ -4,12 +4,7 @@ import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 
 import { isDev, siteURL } from '~/lib/constants'
-
-const GridDebugger = dynamic(() => import('~/lib/debug/grid-debugger'), {
-  ssr: false
-})
-
-import dynamic from 'next/dynamic'
+import GridDebugger from '~/lib/debug/grid-debugger'
 
 import { AppHooks } from '~/app/app-hooks'
 import { Providers } from '~/app/providers'

@@ -29,10 +29,12 @@ export async function authenticate(
 
 export async function setAuthCookie() {
   const oneDay = 24 * 60 * 60 * 1000
-  cookies().set(AUTH_COOKIE_NAME, 'true', { expires: Date.now() - oneDay })
+  const cookieStore = await cookies()
+  cookieStore.set(AUTH_COOKIE_NAME, 'true', { expires: Date.now() - oneDay })
 }
 
 export async function checkAuthCookie(): Promise<boolean> {
-  const isCookieValid = cookies().get(AUTH_COOKIE_NAME)?.value === 'true'
+  const cookieStore = await cookies()
+  const isCookieValid = cookieStore.get(AUTH_COOKIE_NAME)?.value === 'true'
   return isCookieValid
 }

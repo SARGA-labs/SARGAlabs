@@ -1,14 +1,14 @@
 import { cookies } from 'next/headers'
-import React from 'react'
+import { ReactNode } from 'react'
 
 import PasswordProtect from './passwordProtect'
 
-export default function PasswordWrapper({
+export default async function PasswordWrapper({
   children
 }: {
-  children?: React.ReactNode
+  children?: ReactNode
 }) {
-  const cookiesStore = cookies()
+  const cookiesStore = await cookies()
   const loginCookies = cookiesStore.get(process.env.PASSWORD_COOKIE_NAME!)
   const isLoggedIn = !!loginCookies?.value
   return !isLoggedIn ? <PasswordProtect /> : children

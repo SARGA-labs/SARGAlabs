@@ -4,7 +4,7 @@ export const config = {
   matcher: ['/((?!api|_next|favicon.ico|robots.txt|sitemap.xml).*)']
 }
 
-const ALLOWED = new Set(['studio', 'support', 'journal'])
+const ALLOWED = new Set(['studio', 'support', 'journal', 'store'])
 
 function getSubdomain(host: string) {
   const hostname = host.split(':')[0]
@@ -17,7 +17,6 @@ function getSubdomain(host: string) {
   // prod: studio.sar.ga
   const parts = hostname!.split('.')
   if (parts.length >= 3) return parts[0]
-
   return ''
 }
 
