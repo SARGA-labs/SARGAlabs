@@ -4,14 +4,7 @@ export const config = {
   matcher: ['/((?!api|_next|favicon.ico|robots.txt|sitemap.xml).*)']
 }
 
-const ALLOWED = new Set([
-  'studio',
-  'support',
-  'journal',
-  'write',
-  'research',
-  'club'
-])
+const ALLOWED = new Set(['studio', 'support', 'write', 'research', 'club'])
 
 function getSubdomain(host: string) {
   const hostname = host.split(':')[0]
