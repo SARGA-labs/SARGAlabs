@@ -8,7 +8,11 @@ export const metadata: Metadata = {
 
 const WRITEPAGE = async () => {
   const initialItems = await getAllMdxContent()
-  return <WriteComponent initialItems={initialItems} />
+  return (
+    <>
+      <WriteComponent initialItems={initialItems} />
+    </>
+  )
 }
 
 export default WRITEPAGE

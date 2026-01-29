@@ -67,7 +67,7 @@ export const ShapeSpacer = ({
     <div
       ref={spacerRef}
       className={`${s.shapeSpacer || ''} ${side === 'left' ? s.floatRight || '' : s.floatLeft || ''}`}
-      style={{ width: radius, height: '100%', minHeight: '300vh', zIndex: 10 }}
+      style={{ width: radius, height: '100%', minHeight: '100%', zIndex: 10 }}
     />
   )
 }
@@ -77,6 +77,9 @@ interface MdxItem {
   frontmatter: any
   mdxSource: MDXRemoteSerializeResult
 }
+
+import { NewsletterModal } from '../common/NewsletterModal'
+import { NewsletterStatic } from '../common/NewsletterModal/Static'
 
 export default function WriteComponent({
   initialItems
@@ -201,23 +204,32 @@ export default function WriteComponent({
           {headerItems}
 
           {/* Content Items */}
-          {items.map((item) => (
-            <div
-              key={item.uniqueId}
-              className={s.writeItem || ''}
-              style={{ position: 'relative' }}
-            >
-              <span className={s.faintNumber || ''}>
-                {item.originalIndex.toString().padStart(3, '0')}
-              </span>
-              {/* Render MDX content */}
-              <div className="mdx-content">
-                <MDXRemote {...item.data.mdxSource} components={components} />
+          {items.map((item, index) => {
+            const columnIndex = index % columns
+            const isLeftSide = columnIndex <= leftSpacerIndex
+            return (
+              <div
+                key={item.uniqueId}
+                className={s.writeItem}
+                style={{
+                  position: 'relative',
+                  textAlign: isLeftSide ? 'right' : 'left'
+                }}
+              >
+                <span className={s.faintNumber || ''}>
+                  {item.originalIndex.toString().padStart(3, '0')}
+                </span>
+                {/* Render MDX content */}
+                <div className="mdx-content">
+                  <MDXRemote {...item.data.mdxSource} components={components} />
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </Masonry>
       </div>
+      <NewsletterStatic />
+      <NewsletterModal />
     </>
   )
 }

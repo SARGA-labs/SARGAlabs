@@ -11,6 +11,7 @@ import {
   SARGAlogs
 } from '~/lib/constants'
 import { GAScripts, useAppGA } from '~/lib/ga'
+import { useFavicon } from '~/hooks/use-favicon'
 
 export const AppHooks = () => {
   if (isProd && isClient) {
@@ -23,6 +24,7 @@ export const AppHooks = () => {
   useOverflowDebuggerInDev()
   useUserIsTabbing()
   useFontsLoaded()
+  useFavicon()
 
   return gaTrackingId ? <GAScripts /> : null
 }
