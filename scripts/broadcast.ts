@@ -10,7 +10,7 @@ import { NewsletterEmail } from '../src/emails/NewsletterEmail'
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 const AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID
 const CONTENT_DIR = path.join(process.cwd(), 'src/content/write')
-const SITE_URL = 'https://sargalabs.com'
+const SITE_URL = 'https://sar.ga'
 
 if (!RESEND_API_KEY) {
   console.error('Error: RESEND_API_KEY is missing in .env')
@@ -22,7 +22,7 @@ const resend = new Resend(RESEND_API_KEY)
 async function askQuestion(query: string): Promise<string> {
   const rl = readline.createInterface({
     input: process.stdin,
-    output: process.stdout,
+    output: process.stdout
   })
 
   return new Promise((resolve) =>
@@ -43,9 +43,10 @@ async function main() {
     process.exit(1)
   }
 
-  const files = fs.readdirSync(CONTENT_DIR)
-    .filter(f => f.endsWith('.mdx'))
-    .map(f => {
+  const files = fs
+    .readdirSync(CONTENT_DIR)
+    .filter((f) => f.endsWith('.mdx'))
+    .map((f) => {
       const stat = fs.statSync(path.join(CONTENT_DIR, f))
       return { name: f, time: stat.mtime.getTime() }
     })
@@ -64,17 +65,19 @@ async function main() {
   const filePath = path.join(CONTENT_DIR, latestFile.name)
   const fileContent = fs.readFileSync(filePath, 'utf-8')
   const { data, content } = matter(fileContent)
-  
-  const postUrl = `${SITE_URL}/write` 
+
+  const postUrl = `${SITE_URL}/write`
   const title = data.title || latestFile.name.replace(/\.mdx$/, '')
 
   console.log(`Latest Post: ${latestFile.name}`)
   console.log(`Title:       ${title}`)
   console.log(`URL:         ${postUrl}`)
   console.log('----------------------------------')
-  
+
   // 2. Confirm
-  const answer = await askQuestion('Broadcast this post to all subscribers? (y/N): ')
+  const answer = await askQuestion(
+    'Broadcast this post to all subscribers? (y/N): '
+  )
   if (answer.trim().toLowerCase() !== 'y') {
     console.log('Aborted.')
     process.exit(0)
@@ -85,20 +88,20 @@ async function main() {
   let contacts: any[] = []
   try {
     if (AUDIENCE_ID) {
-        const result = await resend.contacts.list({ audienceId: AUDIENCE_ID })
-        
-        // Handling Resend's wrapper-style response
-        if (result.data && 'data' in result.data) {
-            contacts = (result.data as any).data
-        } else if (Array.isArray(result.data)) {
-            contacts = result.data
-        } else if (result.error) {
-            console.error('Resend API Error:', result.error)
-            process.exit(1)
-        }
-    } else {
-        console.warn('Warning: RESEND_AUDIENCE_ID not set in .env.')
+      const result = await resend.contacts.list({ audienceId: AUDIENCE_ID })
+
+      // Handling Resend's wrapper-style response
+      if (result.data && 'data' in result.data) {
+        contacts = (result.data as any).data
+      } else if (Array.isArray(result.data)) {
+        contacts = result.data
+      } else if (result.error) {
+        console.error('Resend API Error:', result.error)
         process.exit(1)
+      }
+    } else {
+      console.warn('Warning: RESEND_AUDIENCE_ID not set in .env.')
+      process.exit(1)
     }
   } catch (e) {
     console.error('Error fetching contacts:', e)
@@ -126,7 +129,7 @@ async function main() {
   for (let i = 0; i < contacts.length; i += BATCH_SIZE) {
     const batch = contacts.slice(i, i + BATCH_SIZE)
     console.log(`Sending batch ${Math.floor(i / BATCH_SIZE) + 1}...`)
-    
+
     const emailBatch = batch.map((contact: any) => ({
       from: 'SARGA(labs) <updates@noreply.sar.ga>',
       to: contact.email,
