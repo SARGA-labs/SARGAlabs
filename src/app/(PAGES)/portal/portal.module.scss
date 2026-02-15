@@ -1,0 +1,51 @@
+.container {
+    min-height: 100vh;
+    background-color: var(--color-base);
+    color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+}
+
+.landingContainer {
+    min-height: 100vh;
+    background-color: var(--color-base);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landingContent {
+    text-align: center;
+}
+
+.landingTitle {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+}
+
+.landingText {
+    color: var(--color-secondary, #737373);
+    margin-bottom: var(--space);
+}
+
+.landingButton {
+    font-size: 0.875rem;
+    text-decoration: underline;
+    color: var(--color-secondary, #a3a3a3);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: color var(--transition-quick);
+
+    &:hover {
+        color: var(--color-primary);
+    }
+}

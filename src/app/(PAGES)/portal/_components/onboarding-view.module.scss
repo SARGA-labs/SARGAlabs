@@ -1,0 +1,112 @@
+.container {
+    max-width: 42rem;
+    margin-inline: auto;
+    padding-block: calc(var(--space) * 4);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--space) * 1.5);
+}
+
+.title {
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.description {
+    color: var(--color-secondary, #a3a3a3);
+}
+
+.card {
+    background-color: #171717;
+    border: 1px solid #262626;
+    border-radius: 0.75rem;
+    padding: var(--space);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space);
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.stepNumberActive {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.stepTextActive {
+    color: var(--color-primary);
+}
+
+.stepNumberInactive {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #262626;
+    color: #a3a3a3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.stepTextInactive {
+    color: #a3a3a3;
+}
+
+.actions {
+    padding-top: var(--space-sm);
+}
+
+.button {
+    width: 100%;
+    background-color: var(--color-primary);
+    color: var(--color-base);
+    font-weight: 700;
+    padding-block: var(--space-sm);
+    border-radius: 0.25rem;
+    transition: opacity var(--transition-quick);
+    cursor: pointer;
+    border: none;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.stepContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.stepSubText {
+    font-size: 0.875rem;
+    color: var(--color-secondary, #a3a3a3);
+    margin-top: 0.25rem;
+}
+
+.fileInput {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-secondary, #a3a3a3);
+}
