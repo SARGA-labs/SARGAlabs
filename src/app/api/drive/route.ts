@@ -1,5 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server";
-import { getDriveFiles } from "~/lib/drive";
+import { getDriveFiles } from "~/lib/utils/drive";
 
 // This API route acts as a secure proxy to fetch files from Google Drive
 // without exposing the Service Account credentials to the client.

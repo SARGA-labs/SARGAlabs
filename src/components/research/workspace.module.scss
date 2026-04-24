@@ -1,0 +1,122 @@
+.workspace {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.preview_area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black; // high contrast for media
+    padding: 20pt;
+    overflow: auto;
+}
+
+.preview_content {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.iframe_preview {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: white; // PDFs usually need white bg
+}
+
+.unsupported {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15pt;
+    opacity: 0.5;
+    font-family: SFMono-Regular, monospace;
+
+    a {
+        color: var(--color-primary);
+        border: 1px solid var(--color-primary);
+        padding: 8pt 16pt;
+        text-decoration: none;
+        transition: all 0.2s;
+
+        &:hover {
+            background: var(--color-primary);
+            color: var(--color-base);
+        }
+    }
+}
+
+.inspector {
+    width: 320px;
+    border-left: 1px solid var(--color-primary);
+    background: var(--color-base);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.inspector_header {
+    padding: 20pt;
+    border-bottom: 1px solid var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+        color: var(--color-primary);
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-family: SFMono-Regular, monospace;
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.inspector_body {
+    padding: 20pt;
+    display: flex;
+    flex-direction: column;
+    gap: 20pt;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5pt;
+}
+
+.label {
+    font-size: 0.7rem;
+    font-family: SFMono-Regular, monospace;
+    opacity: 0.5;
+    text-transform: uppercase;
+}
+
+.value {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5pt;
+}
+
+.tag {
+    font-size: 0.7rem;
+    font-family: SFMono-Regular, monospace;
+    padding: 2pt 6pt;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}

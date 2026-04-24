@@ -1,10 +1,10 @@
-import fs from 'fs'
-import path from 'path'
-import { Resend } from 'resend'
-import matter from 'gray-matter'
 import { render } from '@react-email/render'
+import fs from 'fs'
+import matter from 'gray-matter'
+import path from 'path'
 import React from 'react'
 import * as readline from 'readline'
+import { Resend } from 'resend'
 import { NewsletterEmail } from '../src/emails/NewsletterEmail'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
@@ -125,13 +125,13 @@ async function main() {
   )
 
   // 5. Send (Batching 50 at a time)
-  const BATCH_SIZE = 50
+  const BATCH_SIZE = 100
   for (let i = 0; i < contacts.length; i += BATCH_SIZE) {
     const batch = contacts.slice(i, i + BATCH_SIZE)
     console.log(`Sending batch ${Math.floor(i / BATCH_SIZE) + 1}...`)
 
     const emailBatch = batch.map((contact: any) => ({
-      from: 'SARGA(labs) <updates@noreply.sar.ga>',
+      from: 'SARGA(labs) <write@updates.outdated.site>',
       to: contact.email,
       subject: `New Post: ${title}`,
       html: emailHtml

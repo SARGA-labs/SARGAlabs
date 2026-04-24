@@ -1,0 +1,28 @@
+.errorBoundaryWrapper {
+  padding: 20px;
+  margin: 16px 0;
+  border-radius: 8px;
+  background-color: #fee2e2;
+  border: 1px solid #ef4444;
+}
+
+.errorTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #dc2626;
+  margin-bottom: 8px;
+}
+
+.errorBoundaryWrapper button {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.errorBoundaryWrapper button:hover {
+  background-color: #dc2626;
+}

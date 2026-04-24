@@ -6,7 +6,10 @@ const config = {
   images: {
     formats: ['image/avif', 'image/webp']
   },
-  allowedDevOrigins: ['http://localhost:3000', 'http://192.168.0.105:3000']
+  allowedDevOrigins: ['sar.local', '*.sar.local'],
+  turbopack: {
+    root: './'
+  }
 }
 module.exports = (_phase, { defaultConfig: _ }) => {
   const plugins = [

@@ -1,0 +1,109 @@
+.panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 15pt;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20pt;
+    padding-bottom: 15pt;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.breadcrumb {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: -0.01em;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+.controls {
+    display: flex;
+    gap: 10pt;
+}
+
+.toggle {
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    padding: 4pt 8pt;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover,
+    &.active {
+        background: var(--color-primary);
+        color: var(--color-base);
+    }
+}
+
+.grid {
+    display: flex;
+    width: auto;
+    gap: 20pt;
+}
+
+.grid_column {
+    background-clip: padding-box;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1pt;
+}
+
+.file_card {
+    padding: 10pt;
+    margin-bottom: 20pt;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.02);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+}
+
+.file_list_item {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    padding: 8pt 10pt;
+    cursor: pointer;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: SFMono-Regular, monospace;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+}
+
+.file_name {
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file_meta {
+    opacity: 0.5;
+    font-size: 0.8rem;
+}

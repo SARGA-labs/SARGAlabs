@@ -11,8 +11,15 @@
 import type * as actions from "../actions.js";
 import type * as activities from "../activities.js";
 import type * as auth from "../auth.js";
+import type * as lib_auth from "../lib/auth.js";
+import type * as lib_passwords from "../lib/passwords.js";
+import type * as linkPreview from "../linkPreview.js";
+import type * as moodboards from "../moodboards.js";
 import type * as projects from "../projects.js";
+import type * as research from "../research.js";
 import type * as users from "../users.js";
+import type * as webauthn from "../webauthn.js";
+import type * as webauthnHelpers from "../webauthnHelpers.js";
 
 import type {
   ApiFromModules,
@@ -24,8 +31,15 @@ declare const fullApi: ApiFromModules<{
   actions: typeof actions;
   activities: typeof activities;
   auth: typeof auth;
+  "lib/auth": typeof lib_auth;
+  "lib/passwords": typeof lib_passwords;
+  linkPreview: typeof linkPreview;
+  moodboards: typeof moodboards;
   projects: typeof projects;
+  research: typeof research;
   users: typeof users;
+  webauthn: typeof webauthn;
+  webauthnHelpers: typeof webauthnHelpers;
 }>;
 
 /**

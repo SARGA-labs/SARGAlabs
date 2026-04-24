@@ -1,99 +1,101 @@
-'use client'
+"use client";
 
-import { useEffect } from 'react'
+import { useEffect } from "react";
 
-import { useAppStore } from '~/context/use-app-store'
+import { useAppStore } from "~/context/use-app-store";
+import { useFavicon } from "~/hooks/use-favicon";
 import {
-  gaTrackingId,
-  isClient,
-  isDev,
-  isProd,
-  SARGAlogs
-} from '~/lib/constants'
-import { GAScripts, useAppGA } from '~/lib/ga'
-import { useFavicon } from '~/hooks/use-favicon'
+	gaTrackingId,
+	isClient,
+	isDev,
+	isProd,
+	SARGAlogs,
+} from "~/lib/constants";
+import { GAScripts, useAppGA } from "~/lib/ga";
 
 export const AppHooks = () => {
-  if (isProd && isClient) {
-    // eslint-disable-next-line no-console
-    console.log(SARGAlogs)
-  }
+	if (isProd && isClient) {
+		console.log(SARGAlogs);
+	}
 
-  if (gaTrackingId) useAppGA()
+	if (gaTrackingId) {
+		// biome-ignore lint/correctness/useHookAtTopLevel: Only when we have a GA Tag this hook should run
+		useAppGA();
+	}
 
-  useOverflowDebuggerInDev()
-  useUserIsTabbing()
-  useFontsLoaded()
-  useFavicon()
+	useOverflowDebuggerInDev();
+	useUserIsTabbing();
+	useFontsLoaded();
+	useFavicon();
 
-  return gaTrackingId ? <GAScripts /> : null
-}
+	return gaTrackingId ? <GAScripts /> : null;
+};
 
 /* APP HOOKS */
 
 const useOverflowDebuggerInDev = () => {
-  useEffect(() => {
-    if (!isDev) return
-    let mousetrapRef: Mousetrap.MousetrapInstance | undefined = undefined
-    import('mousetrap').then(({ default: mousetrap }) => {
-      mousetrapRef = mousetrap.bind(['command+i', 'ctrl+i', 'alt+i'], () => {
-        document.body.classList.toggle('inspect')
-      })
-    })
+	useEffect(() => {
+		if (!isDev) return;
+		let mousetrapRef: Mousetrap.MousetrapInstance | undefined;
+		import("mousetrap").then(({ default: mousetrap }) => {
+			mousetrapRef = mousetrap.bind(["command+i", "ctrl+i", "alt+i"], () => {
+				document.body.classList.toggle("inspect");
+			});
+		});
 
-    return () => {
-      mousetrapRef?.unbind(['command+i', 'ctrl+i', 'alt+i'])
-    }
-  }, [])
-}
+		return () => {
+			mousetrapRef?.unbind(["command+i", "ctrl+i", "alt+i"]);
+		};
+	}, []);
+};
 
 const useUserIsTabbing = () => {
-  useEffect(() => {
-    function handleKeyDown(event: KeyboardEvent) {
-      if (event.code === `Tab`) {
-        document.body.classList.add('user-is-tabbing')
-      }
-    }
+	useEffect(() => {
+		function handleKeyDown(event: KeyboardEvent) {
+			if (event.code === `Tab`) {
+				document.body.classList.add("user-is-tabbing");
+			}
+		}
 
-    function handleMouseDown() {
-      document.body.classList.remove('user-is-tabbing')
-    }
+		function handleMouseDown() {
+			document.body.classList.remove("user-is-tabbing");
+		}
 
-    window.addEventListener('keydown', handleKeyDown)
-    window.addEventListener('mousedown', handleMouseDown)
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown)
-      window.removeEventListener('mousedown', handleMouseDown)
-    }
-  }, [])
-}
+		window.addEventListener("keydown", handleKeyDown);
+		window.addEventListener("mousedown", handleMouseDown);
+		return () => {
+			window.removeEventListener("keydown", handleKeyDown);
+			window.removeEventListener("mousedown", handleMouseDown);
+		};
+	}, []);
+};
 
 const useFontsLoaded = () => {
-  useEffect(() => {
-    const maxWaitTime = 1500 // tweak this as needed.
+	useEffect(() => {
+		const maxWaitTime = 1500;
 
-    const timeout = window.setTimeout(() => {
-      onReady()
-    }, maxWaitTime)
+		const timeout = window.setTimeout(() => {
+			onReady();
+		}, maxWaitTime);
 
-    function onReady() {
-      window.clearTimeout(timeout)
-      useAppStore.setState({ fontsLoaded: true })
-      document.documentElement.classList.add('fonts-loaded')
-    }
+		function onReady() {
+			window.clearTimeout(timeout);
+			useAppStore.setState({ fontsLoaded: true });
+			document.documentElement.classList.add("fonts-loaded");
+		}
 
-    try {
-      document.fonts.ready
-        .then(() => {
-          onReady()
-        })
-        .catch((error: unknown) => {
-          console.error(error)
-          onReady()
-        })
-    } catch (error) {
-      console.error(error)
-      onReady()
-    }
-  }, [])
-}
+		try {
+			document.fonts.ready
+				.then(() => {
+					onReady();
+				})
+				.catch((error: unknown) => {
+					console.error(error);
+					onReady();
+				});
+		} catch (error) {
+			console.error(error);
+			onReady();
+		}
+	}, []);
+};
